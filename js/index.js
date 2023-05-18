@@ -25,9 +25,11 @@ function salvarFormulario() {
   console.log(formulario);
 
   alert("Você fez login com o usuário: " + usuario);
+
+  window.location.href = "../html/secretaria.html";
 }
 
 function bloqueaio(){
   alert("As páginas só poderão ser acessadas após o Login");
-  
+
 }
