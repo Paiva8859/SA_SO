@@ -1,7 +1,8 @@
 const logar = document.querySelector(".logar");
+const deactive = document.querySelector(".deactive");
 
 logar.addEventListener("click", salvarFormulario);
-
+deactive.addEventListener("click", bloqueio);
 
 
 
@@ -28,3 +29,7 @@ function salvarFormulario() {
   alert("Você fez login com o usuário: " + usuario)
 }
 
+function bloqueio{
+alert(asdfasdf);
+
+}
