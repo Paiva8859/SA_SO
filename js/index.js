@@ -31,5 +31,4 @@ function salvarFormulario() {
 
 function bloqueio{
 alert(asdfasdf);
-
 }
