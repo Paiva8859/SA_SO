@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial</title>
+    <link rel="stylesheet" href="css/HeaderFooter.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <figure class="logo-img-container">
+                <img src="img/SenaiLogo.png" alt="SenaiLogo" class="logo-img">
+            </figure>
+
+            <div class="ham-btn">
+                <span class="ham-btn-bar"></span>
+                <span class="ham-btn-bar"></span>
+                <span class="ham-btn-bar"></span>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-content">
+                <li>
+                    <a class="active" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a class="" href="html/secretaria.html">Secretaria</a>
+                </li>
+                <li>
+                    <a class="" href="html/diarioEscolar.html">Diário Escolar</a>
+                </li>
+                <li>
+                    <a class="" href="html/biblioteca.html">Biblioteca</a>
+                </li>
+                <li>
+                    <a class="" href="html/cantina.html">Cantina</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <form action="GET">
+                <label for="user">Usuário:</label>
+                <input type="email" name="user" id="user">
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+
+                <input type="submit" value="OK" onclick="salvarFormulario">
+                <input type="reset" value="Cancelar">
+            </form>
+        </article>
+    </main>
+
+    <footer>
+        <span>SENAI | LUIZ VARGA</span>
+    </footer>
+</body>
+
+<script src="js/index.js"></script>
+
+</html>
