@@ -1,12 +1,12 @@
-const logar = document.querySelector(".logar");
 const deactive = document.querySelector(".block");
+const logar = document.querySelector(".logar");
+const form = document.getElementById("meuFormulario");
+var formulario = []; 
 
-logar.addEventListener("click", salvarFormulario);
+
 deactive.addEventListener("click", bloqueio);
-
-
-
-var formulario = [];
+logar.addEventListener("click", salvarFormulario);
+form.addEventListener("submit", salvarFormulario);
 
 function salvarFormulario() {
   var usuario = document.getElementById("user").value;
@@ -23,13 +23,13 @@ function salvarFormulario() {
 
   console.log("Formulário salvo com sucesso!");
   console.log(formulario);
-
-  alert("Você fez login com o usuário: " + usuario);
-
+  
   window.location.href = "../html/secretaria.html";
+  
+  alert("Você fez login com o usuário: " + usuario);
 }
 
-function bloqueaio(){
-  alert("As páginas só poderão ser acessadas após o Login");
 
+function bloqueio(){
+  alert("As páginas só poderão ser acessadas após o Login");
 }
