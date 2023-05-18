@@ -1,8 +1,13 @@
+const logar = document.querySelector(".logar");
+
+logar.addEventListener("click", salvarFormulario);
+
+
+
 
 var formulario = [];
 
 function salvarFormulario() {
-  event.preventDefault();
 
   var usuario = document.getElementById("user").value;
   var senha = document.getElementById("password").value;
