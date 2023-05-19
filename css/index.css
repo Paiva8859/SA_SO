@@ -3,3 +3,13 @@ article{
     align-items: center;
     justify-content: center;
 }
+
+.avisoE, .avisoS{
+    display: none;
+}
+.avisoE.aparece{
+    display: block;
+}
+.avisoS.aparece{
+    display: block;
+}
