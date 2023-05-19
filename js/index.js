@@ -1,35 +1,46 @@
-const deactive = document.querySelector(".block");
+//Dados
+const block = document.querySelector(".block");
 const logar = document.querySelector(".logar");
-const form = document.getElementById("meuFormulario");
-var formulario = []; 
+const form = document.querySelector(".formLogin");
+var formulario = [{
+  user: 'adm@adm',
+  password: 'admin'
+}];
+var usuarioAtual;
 
+//Events
+block.addEventListener("click", bloqueio);
+logar.addEventListener("click", verify);
+form.addEventListener("submit", verify);
 
-deactive.addEventListener("click", bloqueio);
-logar.addEventListener("click", salvarFormulario);
-form.addEventListener("submit", salvarFormulario);
-
-function salvarFormulario() {
+//Functions
+function verify(event){
+  event.preventDefault();
+  
   var usuario = document.getElementById("user").value;
   var senha = document.getElementById("password").value;
-  var dadosFormulario = {
-    user: usuario,
-    password: senha
-  };
 
-  formulario.push(dadosFormulario);
+  const loginExistente = formulario.find((item) => item.user === usuario && item.password == senha);
 
-  document.getElementById("user").value = "";
-  document.getElementById("password").value = "";
-
-  console.log("Formulário salvo com sucesso!");
-  console.log(formulario);
-  
-  window.location.href = "../html/secretaria.html";
-  
-  alert("Você fez login com o usuário: " + usuario);
+  if(loginExistente){
+    alert("Você já está logado!");
+    window.location.href = "html/secretaria.html";
+  }
+  else{
+    var dadosFormulario = {
+      user: usuario,
+      password: senha
+    };
+    formulario.push(dadosFormulario);
+    usuarioAtual = dadosFormulario;
+    alert("Você fez login com o usuário: "+ usuario);
+    window.location.href = "html/secretaria.html";
+  }
 }
 
 
-function bloqueio(){
-  alert("As páginas só poderão ser acessadas após o Login");
+function bloqueio(event){
+  event.preventDefault();
+  alert("As páginas só poderão ser acessadas após o Login!");
+  window.location.reload();
 }

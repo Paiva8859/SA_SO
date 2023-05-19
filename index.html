@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela Inicial</title>
     <link rel="stylesheet" href="css/HeaderFooter.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -46,16 +47,19 @@
 
     <main>
         <article>
-            <form action="html/secretaria.html" method="POST">
-                <label for="user">Usuário:</label>
-                <input type="email" name="user" id="user">
-
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
-
-                <input class="logar" type="submit" value="OK">
-                <input type="reset" value="Cancelar">
-            </form>
+            <section>
+                <form class="formLogin" action="html/secretaria.html" method="POST">
+                    
+                    <label for="user">Usuário:</label>
+                    <input type="email" name="user" id="user">
+    
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password">
+    
+                    <input class="logar" type="submit" value="OK">
+                    <input type="reset" value="Cancelar">
+                </form>
+            </section>
         </article>
     </main>
 
@@ -65,5 +69,6 @@
 </body>
 
 <script src="js/index.js"></script>
+<script src="js/crud.js"></script>
 
 </html>
