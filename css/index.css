@@ -4,9 +4,6 @@ article{
     justify-content: center;
 }
 
-.avisoE, .avisoS{
-    display: none;
-}
 .avisoE.aparece{
     display: block;
 }
