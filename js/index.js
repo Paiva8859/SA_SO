@@ -7,7 +7,9 @@ const form = document.querySelector(".formLogin");
 const logar = document.querySelector(".logar");
 //Aviso de verificação de campos
 const avisoE = document.querySelector(".avisoE");
+avisoE.style.display = "none";
 const avisoS = document.querySelector(".avisoS");
+avisoS.style.display = "none";
 //Campos
 const userInput = document.getElementById("user");
 const passwordInput = document.getElementById("password");
@@ -22,15 +24,29 @@ var usuarioAtual;
 //-----==Events==-----//
 //Usuário sem permissão tentando acessar os links 'proibidos'
 block.addEventListener("click", bloqueio);
-//Verificar se o usuário já esta logado
-logar.addEventListener("click", verifyLogado);
-//verificar se campo email está certo
-userInput.addEventListener("blur", verifyCampoUser);
-//verificar se campo senha está certo
-passwordInput.addEventListener("blur", verifyCampoPassword);
+//form
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  var usuario = document.getElementById("user").value;
+  var senha = document.getElementById("password").value;
+  var vcu = verifyCampoUser();
+  var vcp = verifyCampoPassword();
+  
+  if (vcu && vcp) {
+    var dadosFormulario = {
+      user: usuario,
+      password: senha
+    };
+    formulario.push(dadosFormulario);
+    usuarioAtual = dadosFormulario;
+    alert("Você fez login com o usuário: "+ usuario);
+    window.location.href = "html/secretaria.html";
+  }
+})
 
 //-----==Functions==-----//
-function verifyLogado(event){
+/*function verifyLogado(event){
   event.preventDefault();
   
   var usuario = document.getElementById("user").value;
@@ -52,21 +68,27 @@ function verifyLogado(event){
     alert("Você fez login com o usuário: "+ usuario);
     window.location.href = "html/secretaria.html";
   }
-}
+}*/
 
 function verifyCampoUser(){
   var usuario = document.getElementById("user").value;
 
-  if (usuario.length < 3 || !usuario.includes("@")) {
-    avisoE.classList.toggle("aparece");
+  if (usuario.length < 3) {
+    avisoE.style.display = "block";
+    return false;
   }
+
+  return true;
 }
-function verifyCampoUser(){
+function verifyCampoPassword(){
   var senha = document.getElementById("password").value;
 
   if (senha.length < 4) {
-    avisoS.classList.toggle("aparece");
+    avisoS.style.display = "block";
+    return false;
   }
+
+  return true;
 }
 
 
