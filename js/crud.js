@@ -14,9 +14,9 @@ function lerUsuario(){
 console.log(lerUsuario());
 
 //-----==Update==-----//
-function atualizarUsuario(idx, newPassword){
+function atualizarUsuario(usuario, newPassword){
     const userPAtualizar = lerUsuario().find((formulario) => {
-        return formulario.id === idx;
+        return formulario.user === usuario;
     });
 
     userPAtualizar.password = newPassword;
