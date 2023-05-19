@@ -22,7 +22,7 @@ var formulario = [{
 var usuarioAtual;
 
 //-----==Events==-----//
-//Usuário sem permissão tentando acessar os links 'proibidos'
+//Usuário sem permissão tentando
 block.addEventListener("click", bloqueio);
 //form
 form.addEventListener("submit", function (e) {
@@ -45,37 +45,15 @@ form.addEventListener("submit", function (e) {
   }
 })
 
-//-----==Functions==-----//
-/*function verifyLogado(event){
-  event.preventDefault();
-  
-  var usuario = document.getElementById("user").value;
-  var senha = document.getElementById("password").value;
-
-  const loginExistente = formulario.find((item) => item.user === usuario && item.password == senha);
-
-  if(loginExistente){
-    alert("Você já está logado!");
-    window.location.href = "html/secretaria.html";
-  }
-  else{
-    var dadosFormulario = {
-      user: usuario,
-      password: senha
-    };
-    formulario.push(dadosFormulario);
-    usuarioAtual = dadosFormulario;
-    alert("Você fez login com o usuário: "+ usuario);
-    window.location.href = "html/secretaria.html";
-  }
-}*/
-
 function verifyCampoUser(){
   var usuario = document.getElementById("user").value;
 
-  if (usuario.length < 3) {
+  if (usuario.length <= 2) {
     avisoE.style.display = "block";
     return false;
+  }
+  else{
+    avisoE.style.display = "none";
   }
 
   return true;
@@ -83,9 +61,12 @@ function verifyCampoUser(){
 function verifyCampoPassword(){
   var senha = document.getElementById("password").value;
 
-  if (senha.length < 4) {
+  if (senha.length <= 5) {
     avisoS.style.display = "block";
     return false;
+  }
+  else{
+    avisoS.style.display = "none";
   }
 
   return true;
