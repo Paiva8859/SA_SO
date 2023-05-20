@@ -6,4 +6,10 @@ article{
 
 .avisoE, .avisoS{
     display: none;
+    background-color: red;
+}
+
+fieldset{
+    width: 30em;
+    text-align: center;
 }

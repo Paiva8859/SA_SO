@@ -52,6 +52,10 @@ function verifyCampoUser(){
     avisoE.style.display = "block";
     return false;
   }
+  else if(!usuario.includes("@")){
+    avisoE.style.display = "block";
+    return false;
+  }
   else{
     avisoE.style.display = "none";
   }
