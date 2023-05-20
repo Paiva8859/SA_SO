@@ -24,12 +24,17 @@ const formContato = document.querySelector(".formContato");
 //Hover
 cardGen.addEventListener("mouseover", mostraCCO);
 cardGen.addEventListener("mouseout", escondeCCO);
+
+cardObjetivos.addEventListener("mouseover", mostraOCO);
+cardObjetivos.addEventListener("mouseout", escondeOCO);
 //Abrir Card Completo
 btnContato.addEventListener("click", function (){
     abreCard(cardContato);
 });
 btnObjetivos.addEventListener("click", function (){
     abreCard(cardObjetivos);
+    btnObjetivos.style.display = "none";
+    voltarO.style.display= "block";
 });
 //Fechar Card Completo
 voltarC.addEventListener("click", function (){
@@ -37,6 +42,8 @@ voltarC.addEventListener("click", function (){
 });
 voltarO.addEventListener("click", function (){
     fechaCard(cardObjetivos);
+    voltarO.style.display = "none";
+    btnObjetivos.style.display = "block";
 });
 
 //FUNCTIONS
@@ -47,6 +54,14 @@ function mostraCCO(){
 function escondeCCO(){
     contatoConteudoOculto.style.display = "none";
 }
+
+function mostraOCO(){
+    oCO.style.display = "block";
+}
+function escondeOCO(){
+    oCO.style.display = "none";
+}
+
 //Card Completo
 function abreCard(card) {
     //Quando o card estiver ativo, os event de mouseover/out são desativados
