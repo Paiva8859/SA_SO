@@ -1,6 +1,6 @@
 //VARIÁVEIS
 //Cards
-const cardGen = document.querySelector("section");
+const cardGen = document.querySelectorAll("section");
 const cardContato = document.querySelector(".cardContato");
 const cardObjetivos = document.querySelector(".cardObjetivos");
 const cardPerguntas = document.querySelector(".cardPerguntas");
@@ -22,11 +22,11 @@ const contatoConteudoOculto = document.querySelector(".cOculto");
 const formContato = document.querySelector(".formContato");
 //EVENTOS
 //Hover
-cardGen.addEventListener("mouseover", mostraCCO);
-cardGen.addEventListener("mouseout", escondeCCO);
-
-cardObjetivos.addEventListener("mouseover", mostraOCO);
-cardObjetivos.addEventListener("mouseout", escondeOCO);
+//Tem que fazer assim pois, ao usar .querySelectorAll, a constante vira uma lista de elementos, sendo assim não é possivel associar à um evento, então precisa selecionar elementos um a um
+cardGen.forEach((section) => {
+    section.addEventListener("mouseover", mostraCCO);
+    section.addEventListener("mouseout", escondeCCO);
+})
 //Abrir Card Completo
 btnContato.addEventListener("click", function (){
     abreCard(cardContato);
@@ -49,10 +49,10 @@ voltarO.addEventListener("click", function (){
 //FUNCTIONS
 //Mostrar e esconder conteúdo oculto do card (modo padrão)
 function mostraCCO(){
-    contatoConteudoOculto.style.display = "block";
+    this.querySelector(".cOculto").style.display = "block";
 }
 function escondeCCO(){
-    contatoConteudoOculto.style.display = "none";
+    this.querySelector(".cOculto").style.display = "none";
 }
 
 function mostraOCO(){
@@ -65,14 +65,14 @@ function escondeOCO(){
 //Card Completo
 function abreCard(card) {
     //Quando o card estiver ativo, os event de mouseover/out são desativados
-    cardContato.removeEventListener("mouseover", mostraCCO);
-    cardContato.removeEventListener("mouseout", escondeCCO);
+    card.removeEventListener("mouseover", mostraCCO);
+    card.removeEventListener("mouseout", escondeCCO);
     
     voltar.style.display = "inline";
     btnContainer.style.display = "none";
 
     if (card == cardContato) {
-        cardContato.classList.toggle("aberto");
+        card.classList.toggle("aberto");
         cardObjetivos.classList.toggle("fechado");
         cardPerguntas.classList.toggle("fechado");
 
@@ -95,8 +95,8 @@ function abreCard(card) {
 
 function fechaCard(card){
     //Quando o card fechar dnv, os event de mouseover/out vão voltar
-    cardContato.addEventListener("mouseover", mostraCCO);
-    cardContato.addEventListener("mouseout", escondeCCO);
+    card.addEventListener("mouseover", mostraCCO);
+    card.addEventListener("mouseout", escondeCCO);
 
     voltar.style.display = "none";
     btnContainer.style.display = "flex";
