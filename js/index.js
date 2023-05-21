@@ -21,7 +21,7 @@ var formulario = [{
 //Usuário atualmente logado
 var usuarioAtual;
 
-//-----==Events==-----//adfas
+//-----==Events==-----//
 //Usuário sem permissão tentando
 block.forEach((link) => {
   link.addEventListener("click", bloqueio);
