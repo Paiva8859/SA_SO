@@ -1,0 +1,63 @@
+/*-----==Main==-----*/
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainContainer{
+    height: 80%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*-----==Article==-----*/
+article{
+    width: 40%;
+    background-color: white;
+    align-self: flex-start;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: solid 1px black;
+}
+
+#cabecalhoMecanica, #cabecalhoEletrica, #cabecalhoInformatica, #cabecalhoAdministracao{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 5px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.lista{
+    display: none;
+}
+.lista.show{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.lista li{
+    height: 2em;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*-----==Aside==-----*/
+aside{
+    height: 100%;
+    width: 40%;
+    background-color: white;
+}

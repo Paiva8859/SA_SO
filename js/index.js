@@ -1,6 +1,6 @@
 //-----==Dados==-----//
 //Links sem acesso
-const block = document.querySelector(".block");
+const block = document.querySelectorAll(".block");
 //Formulário Todo
 const form = document.querySelector(".formLogin");
 //Enviar formulário (Submit)
@@ -23,7 +23,9 @@ var usuarioAtual;
 
 //-----==Events==-----//
 //Usuário sem permissão tentando
-block.addEventListener("click", bloqueio);
+block.forEach((link) => {
+  link.addEventListener("click", bloqueio);
+});
 //form
 form.addEventListener("submit", function (e) {
   e.preventDefault();
