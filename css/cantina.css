@@ -1,0 +1,19 @@
+.mainContainer{
+width: 60%;
+height: 100%;
+padding-top: 15px;
+}
+
+main aside{
+    height: 90%;
+    width: 30%;
+    border:solid 2px black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.horarios{
+    font-size: 30px;
+}
+
